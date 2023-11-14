@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Exercise 2 Exercises for Transforming NumPy ndarrays to DataFrame.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercise 2 Exercises for Transforming NumPy ndarrays to DataFrame.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np</span>
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s1">volumes_array </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">array</span><span class="s2">([</span><span class="s3">2000</span><span class="s2">, </span><span class="s3">2300</span><span class="s2">, </span><span class="s3">2550</span><span class="s2">, </span><span class="s3">2765</span><span class="s2">, </span><span class="s3">3000</span><span class="s2">])</span>
+<span class="s1">average_trade_size_array </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">array </span><span class="s2">([</span><span class="s3">50</span><span class="s2">, </span><span class="s3">53</span><span class="s2">, </span><span class="s3">58</span><span class="s2">, </span><span class="s3">61</span><span class="s2">, </span><span class="s3">65</span><span class="s2">])</span>
+<span class="s1">data </span><span class="s2">= {</span>
+    <span class="s4">&quot;Volume&quot;</span><span class="s2">: </span><span class="s1">volumes_array</span><span class="s2">,</span>
+    <span class="s4">&quot;Average Trade Size&quot;</span><span class="s2">: </span><span class="s1">average_trade_size_array</span>
+<span class="s2">}</span>
+
+<span class="s5"># let's add a date range to our DataFrame as the index</span>
+<span class="s1">dates </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">date_range</span><span class="s2">(</span><span class="s1">start</span><span class="s2">=</span><span class="s4">&quot;2021-01-01&quot;</span><span class="s2">, </span><span class="s1">periods</span><span class="s2">=</span><span class="s3">3</span><span class="s2">, </span><span class="s1">freq</span><span class="s2">=</span><span class="s4">'B'</span><span class="s2">)</span>
+<span class="s1">df </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">(</span><span class="s1">dates</span><span class="s2">)</span>
+<span class="s1">df</span><span class="s2">[</span><span class="s4">'Date'</span><span class="s2">] = </span><span class="s1">dates</span>
+<span class="s1">df</span><span class="s2">.</span><span class="s1">set_index</span><span class="s2">(</span><span class="s4">'Date'</span><span class="s2">, </span><span class="s1">inplace</span><span class="s2">=</span><span class="s0">True</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">(</span><span class="s1">data</span><span class="s2">))</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">df</span><span class="s2">.</span><span class="s1">set_index</span><span class="s2">)</span></pre>
+</body>
+</html>

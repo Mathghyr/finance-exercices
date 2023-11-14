@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Exercise 1 for DataFrame Basics.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercise 1 for DataFrame Basics.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s1">opening_stock_prices </span><span class="s2">= [</span><span class="s3">153</span><span class="s2">, </span><span class="s3">161</span><span class="s2">, </span><span class="s3">167</span><span class="s2">]</span>
+<span class="s1">dates </span><span class="s2">= [</span><span class="s4">'2021-01-04'</span><span class="s2">, </span><span class="s4">'2021-01-05'</span><span class="s2">, </span><span class="s4">'2021-01-06'</span><span class="s2">]</span>
+
+<span class="s1">data </span><span class="s2">= {</span>
+    <span class="s4">'Price' </span><span class="s2">: </span><span class="s1">opening_stock_prices</span><span class="s2">,</span>
+    <span class="s4">'Date' </span><span class="s2">: </span><span class="s1">dates</span>
+<span class="s2">}</span>
+<span class="s1">df </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">(</span><span class="s1">data</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">df</span><span class="s2">)</span></pre>
+</body>
+</html>

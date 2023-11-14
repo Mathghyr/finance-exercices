@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Pandas, Yfinance + plotting closing prices + calculating moving averages + resampling.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #7a7e85;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Pandas, Yfinance + plotting closing prices + calculating moving averages + resampling.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">yfinance </span><span class="s0">as </span><span class="s1">yf</span>
+
+<span class="s2">#Download Apple data</span>
+<span class="s1">apple_data </span><span class="s3">= </span><span class="s1">yf</span><span class="s3">.</span><span class="s1">download</span><span class="s3">(</span><span class="s4">&quot;AAPL&quot;</span><span class="s3">, </span><span class="s1">start</span><span class="s3">=</span><span class="s4">&quot;2020-01-01&quot;</span><span class="s3">, </span><span class="s1">end</span><span class="s3">=</span><span class="s4">&quot;2023-01-01&quot;</span><span class="s3">)</span>
+
+<span class="s2">#Display the first few rows of the data</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s1">apple_data</span><span class="s3">.</span><span class="s1">head</span><span class="s3">())</span>
+
+<span class="s0">import </span><span class="s1">matplotlib</span><span class="s3">.</span><span class="s1">pyplot </span><span class="s0">as </span><span class="s1">plt</span>
+
+<span class="s1">apple_data </span><span class="s3">[</span><span class="s4">'Close'</span><span class="s3">].</span><span class="s1">plot</span><span class="s3">(</span><span class="s1">figsize</span><span class="s3">=(</span><span class="s5">10</span><span class="s3">,</span><span class="s5">5</span><span class="s3">))</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">title</span><span class="s3">(</span><span class="s4">'Apple Stock Closing Prices'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">ylabel</span><span class="s3">(</span><span class="s4">'price (in \$)'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">xlabel</span><span class="s3">(</span><span class="s4">'Date'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">show</span><span class="s3">()</span>
+
+<span class="s1">apple_data</span><span class="s3">[</span><span class="s4">'200-day MA'</span><span class="s3">] = </span><span class="s1">apple_data</span><span class="s3">[</span><span class="s4">'Close'</span><span class="s3">].</span><span class="s1">rolling</span><span class="s3">(</span><span class="s1">window</span><span class="s3">=</span><span class="s5">200</span><span class="s3">).</span><span class="s1">mean</span><span class="s3">()</span>
+<span class="s1">apple_data</span><span class="s3">[[</span><span class="s4">'Close'</span><span class="s3">, </span><span class="s4">'200-day MA'</span><span class="s3">]].</span><span class="s1">plot</span><span class="s3">(</span><span class="s1">figsize</span><span class="s3">=(</span><span class="s5">10</span><span class="s3">,</span><span class="s5">5</span><span class="s3">))</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">title</span><span class="s3">(</span><span class="s4">'Apple Stock Prices with 50-day Moving Average'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">ylabel</span><span class="s3">(</span><span class="s4">'Price (in \$)'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">xlabel</span><span class="s3">(</span><span class="s4">'Date'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">show</span><span class="s3">()</span>
+
+<span class="s1">weekly_data </span><span class="s3">= </span><span class="s1">apple_data</span><span class="s3">[</span><span class="s4">'close'</span><span class="s3">].</span><span class="s1">resample</span><span class="s3">(</span><span class="s4">'W'</span><span class="s3">).</span><span class="s1">mean</span><span class="s3">()</span>
+<span class="s1">weekly_data</span><span class="s3">.</span><span class="s1">plot</span><span class="s3">(</span><span class="s1">figsize</span><span class="s3">=(</span><span class="s5">10</span><span class="s3">,</span><span class="s5">5</span><span class="s3">))</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">title</span><span class="s3">(</span><span class="s4">'Apple Stock Prices with 50-day Moving Average'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">ylabel</span><span class="s3">(</span><span class="s4">'Price (in \$)'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">xlabel</span><span class="s3">(</span><span class="s4">'Date'</span><span class="s3">)</span>
+<span class="s1">plt</span><span class="s3">.</span><span class="s1">show</span><span class="s3">()</span></pre>
+</body>
+</html>

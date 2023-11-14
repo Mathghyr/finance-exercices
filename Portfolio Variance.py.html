@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Portfolio Variance.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Portfolio Variance.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np </span>
+
+<span class="s1">sigma1 </span><span class="s2">= </span><span class="s3">0.1 </span><span class="s4"># standard deviation 1</span>
+<span class="s1">sigma2 </span><span class="s2">= </span><span class="s3">0.2 </span><span class="s4"># standard deviation 2</span>
+<span class="s1">rho1 </span><span class="s2">= </span><span class="s3">0.5 </span><span class="s4"># Correlation coefficient 1</span>
+<span class="s1">rho2 </span><span class="s2">= </span><span class="s3">0.5 </span><span class="s4"># correlation coefficient 2</span>
+<span class="s1">w1 </span><span class="s2">= </span><span class="s3">0.6 </span><span class="s4"># weight of asset 1</span>
+<span class="s1">w2 </span><span class="s2">= </span><span class="s3">0.4 </span><span class="s4"># weight of asset 2</span>
+
+<span class="s1">portfolio_variance </span><span class="s2">= (</span><span class="s1">w1</span><span class="s2">**</span><span class="s3">2 </span><span class="s2">* </span><span class="s1">sigma1</span><span class="s2">**</span><span class="s3">2</span><span class="s2">) + (</span><span class="s1">w2 </span><span class="s2">* </span><span class="s1">sigma2</span><span class="s2">**</span><span class="s3">2</span><span class="s2">) + (</span><span class="s3">2 </span><span class="s2">* </span><span class="s1">w1 </span><span class="s2">* </span><span class="s1">w2 </span><span class="s2">* </span><span class="s1">sigma1 </span><span class="s2">* </span><span class="s1">sigma2 </span><span class="s2">* </span><span class="s1">rho1 </span><span class="s2">* </span><span class="s1">rho1</span><span class="s2">)</span>
+
+<span class="s1">print</span><span class="s2">(</span><span class="s1">portfolio_variance</span><span class="s2">)</span></pre>
+</body>
+</html>

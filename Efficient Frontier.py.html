@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Efficient Frontier.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Efficient Frontier.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np</span>
+
+<span class="s1">annual_returnsA </span><span class="s2">= </span><span class="s3">0.10 </span><span class="s4"># annual returns given in the exercise</span>
+<span class="s1">annual_returnsB </span><span class="s2">= </span><span class="s3">0.15</span>
+<span class="s1">annual_volatilityA </span><span class="s2">= </span><span class="s3">0.2 </span><span class="s4"># annual volatility given in the exercise</span>
+<span class="s1">annual_volatilityB </span><span class="s2">= </span><span class="s3">0.3</span>
+<span class="s1">rhoAB </span><span class="s2">= </span><span class="s3">0.5 </span><span class="s4"># correlation between A and B</span>
+
+<span class="s1">weights </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">linspace</span><span class="s2">(</span><span class="s3">0</span><span class="s2">, </span><span class="s3">1</span><span class="s2">, </span><span class="s3">5</span><span class="s2">) </span><span class="s4"># 11 weight combinations from 0% to 100% in 10% increments</span>
+
+<span class="s1">portfolio_returns </span><span class="s2">= </span><span class="s1">weights </span><span class="s2">* </span><span class="s1">annual_returnsA </span><span class="s2">+ (</span><span class="s3">1 </span><span class="s2">- </span><span class="s1">weights</span><span class="s2">) * </span><span class="s1">annual_returnsB</span>
+<span class="s1">portfolio_volatilities </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">sqrt </span><span class="s2">(</span>
+    <span class="s2">(</span><span class="s1">weights </span><span class="s2">* </span><span class="s1">annual_volatilityA</span><span class="s2">)**</span><span class="s3">2 </span><span class="s2">+ ((</span><span class="s3">1 </span><span class="s2">- </span><span class="s1">weights</span><span class="s2">) * </span><span class="s1">annual_volatilityB</span><span class="s2">) ** </span><span class="s3">2 </span><span class="s2">+ </span><span class="s3">2 </span><span class="s2">* </span><span class="s1">weights </span><span class="s2">* (</span><span class="s3">1 </span><span class="s2">- </span><span class="s1">weights</span><span class="s2">) * </span><span class="s1">rhoAB </span><span class="s2">* </span><span class="s1">annual_volatilityA </span><span class="s2">* </span><span class="s1">annual_volatilityB</span><span class="s2">) </span><span class="s4"># formula of the two-asset portfolio variance</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">portfolio_returns</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">portfolio_volatilities</span><span class="s2">)</span>
+</pre>
+</body>
+</html>

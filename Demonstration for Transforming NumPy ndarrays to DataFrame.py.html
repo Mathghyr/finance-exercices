@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Demonstration for Transforming NumPy ndarrays to DataFrame.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #7a7e85;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Demonstration for Transforming NumPy ndarrays to DataFrame.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np</span>
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s2"># We suppose that we have the following NumPy array with stock prices :</span>
+<span class="s1">price_array </span><span class="s3">= </span><span class="s1">np</span><span class="s3">.</span><span class="s1">array</span><span class="s3">([</span><span class="s4">100</span><span class="s3">, </span><span class="s4">101</span><span class="s3">, </span><span class="s4">102</span><span class="s3">])</span>
+
+<span class="s2"># We suppose another NupPy array with volumes :</span>
+<span class="s1">volume_array </span><span class="s3">= </span><span class="s1">np</span><span class="s3">.</span><span class="s1">array</span><span class="s3">([</span><span class="s4">200</span><span class="s3">, </span><span class="s4">210</span><span class="s3">, </span><span class="s4">220</span><span class="s3">])</span>
+
+<span class="s2"># We can create a DataFrame like to :</span>
+<span class="s1">df_from_array </span><span class="s3">= </span><span class="s1">pd</span><span class="s3">.</span><span class="s1">DataFrame</span><span class="s3">({</span>
+    <span class="s5">&quot;Price&quot;</span><span class="s3">: </span><span class="s1">price_array</span><span class="s3">,</span>
+    <span class="s5">&quot;Volumes&quot;</span><span class="s3">: </span><span class="s1">volume_array</span>
+<span class="s3">})</span>
+<span class="s1">print</span><span class="s3">(</span><span class="s1">df_from_array</span><span class="s3">)</span>
+
+</pre>
+</body>
+</html>

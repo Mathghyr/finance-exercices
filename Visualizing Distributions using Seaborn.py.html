@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Visualizing Distributions using Seaborn.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Visualizing Distributions using Seaborn.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">matplotlib</span><span class="s2">.</span><span class="s1">pyplot </span><span class="s0">as </span><span class="s1">plt</span>
+<span class="s0">import </span><span class="s1">seaborn </span><span class="s0">as </span><span class="s1">sns</span>
+<span class="s1">returns </span><span class="s2">= [</span><span class="s3">0.05</span><span class="s2">, -</span><span class="s3">0.02</span><span class="s2">, </span><span class="s3">0.03</span><span class="s2">, -</span><span class="s3">0.01</span><span class="s2">, </span><span class="s3">0.02</span><span class="s2">, </span><span class="s3">0.03</span><span class="s2">, -</span><span class="s3">0.03</span><span class="s2">, </span><span class="s3">0.01</span><span class="s2">, </span><span class="s3">0.04</span><span class="s2">, -</span><span class="s3">0.01</span><span class="s2">]</span>
+<span class="s1">sns</span><span class="s2">.</span><span class="s1">histplot</span><span class="s2">(</span><span class="s1">returns</span><span class="s2">, </span><span class="s1">bins</span><span class="s2">=</span><span class="s3">5</span><span class="s2">, </span><span class="s1">kde</span><span class="s2">=</span><span class="s0">True</span><span class="s2">)</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">title</span><span class="s2">(</span><span class="s4">&quot;Distribution of Stock Returns&quot;</span><span class="s2">)</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">show</span><span class="s2">()</span>
+</pre>
+</body>
+</html>

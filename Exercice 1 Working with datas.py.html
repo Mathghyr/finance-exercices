@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Exercice 1 Working with datas.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercice 1 Working with datas.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">numpy </span><span class="s0">as </span><span class="s1">np</span>
+<span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s1">closing_price_array </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">array</span><span class="s2">([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">103</span><span class="s2">])</span>
+<span class="s1">volume_array </span><span class="s2">= </span><span class="s1">np</span><span class="s2">.</span><span class="s1">array</span><span class="s2">([</span><span class="s3">2000</span><span class="s2">, </span><span class="s3">2600</span><span class="s2">])</span>
+<span class="s1">data </span><span class="s2">= {</span>
+    <span class="s4">'Closing Price'</span><span class="s2">: </span><span class="s1">closing_price_array</span><span class="s2">,</span>
+    <span class="s4">'Volume'</span><span class="s2">: </span><span class="s1">volume_array</span>
+<span class="s2">}</span>
+<span class="s1">date_time_index </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">date_range</span><span class="s2">(</span><span class="s1">start</span><span class="s2">=</span><span class="s4">&quot;2021-01-01&quot;</span><span class="s2">, </span><span class="s1">periods</span><span class="s2">=</span><span class="s3">21</span><span class="s2">, </span><span class="s1">freq</span><span class="s2">=</span><span class="s4">'B'</span><span class="s2">)</span>
+<span class="s1">df </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">()</span>
+<span class="s1">df</span><span class="s2">[</span><span class="s4">'Date'</span><span class="s2">] = </span><span class="s1">date_time_index</span>
+<span class="s1">df</span><span class="s2">.</span><span class="s1">set_index</span><span class="s2">(</span><span class="s4">'Date'</span><span class="s2">, </span><span class="s1">inplace</span><span class="s2">=</span><span class="s0">True</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">df</span><span class="s2">.</span><span class="s1">set_index</span><span class="s2">)</span>
+</pre>
+</body>
+</html>

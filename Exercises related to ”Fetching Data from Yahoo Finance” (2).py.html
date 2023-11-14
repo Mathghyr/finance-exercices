@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Exercises related to ”Fetching Data from Yahoo Finance” (2).py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercises related to ”Fetching Data from Yahoo Finance” (2).py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">yfinance</span>
+
+<span class="s1">google_data </span><span class="s2">= </span><span class="s1">yfinance</span><span class="s2">.</span><span class="s1">download</span><span class="s2">(</span><span class="s3">&quot;GOOGL&quot;</span><span class="s2">, </span><span class="s1">start</span><span class="s2">=</span><span class="s3">&quot;2020-01-01&quot;</span><span class="s2">, </span><span class="s1">end</span><span class="s2">=</span><span class="s3">&quot;2022-12-31&quot;</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">google_data</span><span class="s2">.</span><span class="s1">head</span><span class="s2">())</span></pre>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #7a7e85;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">pandas </span><span class="s0">as </span><span class="s1">pd</span>
+
+<span class="s1">stock_prices </span><span class="s2">= [</span><span class="s3">100</span><span class="s2">, </span><span class="s3">101</span><span class="s2">, </span><span class="s3">102</span><span class="s2">]</span>
+<span class="s1">volumes </span><span class="s2">= [</span><span class="s3">200</span><span class="s2">, </span><span class="s3">210</span><span class="s2">, </span><span class="s3">220</span><span class="s2">]</span>
+
+<span class="s4"># we should introduce these data on a DataFrame</span>
+<span class="s1">data </span><span class="s2">= {</span>
+    <span class="s5">'Price' </span><span class="s2">: </span><span class="s1">stock_prices</span><span class="s2">,</span>
+    <span class="s5">'Volume' </span><span class="s2">: </span><span class="s1">volumes</span>
+<span class="s2">}</span>
+<span class="s1">df </span><span class="s2">= </span><span class="s1">pd</span><span class="s2">.</span><span class="s1">DataFrame</span><span class="s2">(</span><span class="s1">data</span><span class="s2">)</span>
+</pre>
+</body>
+</html>

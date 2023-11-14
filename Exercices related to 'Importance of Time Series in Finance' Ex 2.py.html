@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Exercices related to 'Importance of Time Series in Finance' Ex 2.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercices related to 'Importance of Time Series in Finance' Ex 2.py</font>
+</center></td></tr></table>
+<pre><span class="s0">def </span><span class="s1">calculate_average_stock_price</span><span class="s2">(</span><span class="s1">stock_prices</span><span class="s2">):</span>
+
+    <span class="s1">total_price </span><span class="s2">= </span><span class="s1">sum</span><span class="s2">(</span><span class="s1">stock_prices</span><span class="s2">)</span>
+    <span class="s1">average_price </span><span class="s2">= </span><span class="s1">total_price </span><span class="s2">/ </span><span class="s1">len</span><span class="s2">(</span><span class="s1">stock_prices</span><span class="s2">)</span>
+
+    <span class="s0">return </span><span class="s1">average_price</span>
+
+<span class="s0">def </span><span class="s1">highlight_days_above_average</span><span class="s2">(</span><span class="s1">dates</span><span class="s2">, </span><span class="s1">stock_prices</span><span class="s2">):</span>
+    <span class="s1">average_price </span><span class="s2">= </span><span class="s1">calculate_average_stock_price</span><span class="s2">(</span><span class="s1">stock_prices</span><span class="s2">)</span>
+
+    <span class="s1">above_average_days </span><span class="s2">= [</span><span class="s1">date </span><span class="s0">for </span><span class="s1">date</span><span class="s2">, </span><span class="s1">price </span><span class="s0">in </span><span class="s1">zip</span><span class="s2">(</span><span class="s1">dates</span><span class="s2">, </span><span class="s1">stock_prices</span><span class="s2">) </span><span class="s0">if </span><span class="s1">price </span><span class="s2">&gt; </span><span class="s1">average_price</span><span class="s2">]</span>
+
+    <span class="s0">return </span><span class="s1">average_price</span><span class="s2">, </span><span class="s1">above_average_days</span>
+
+<span class="s3"># Given data</span>
+<span class="s1">dates </span><span class="s2">= [</span><span class="s4">&quot;Monday&quot;</span><span class="s2">, </span><span class="s4">&quot;Tuesday&quot;</span><span class="s2">, </span><span class="s4">&quot;Wednesday&quot;</span><span class="s2">, </span><span class="s4">&quot;Thursday&quot;</span><span class="s2">, </span><span class="s4">&quot;Friday&quot;</span><span class="s2">]</span>
+<span class="s1">stock_prices </span><span class="s2">= [</span><span class="s5">150</span><span class="s2">, </span><span class="s5">152</span><span class="s2">, </span><span class="s5">151</span><span class="s2">, </span><span class="s5">153</span><span class="s2">, </span><span class="s5">152</span><span class="s2">]</span>
+
+<span class="s3"># Calculate average stock price and highlight days above average</span>
+<span class="s1">result </span><span class="s2">= </span><span class="s1">highlight_days_above_average</span><span class="s2">(</span><span class="s1">dates</span><span class="s2">, </span><span class="s1">stock_prices</span><span class="s2">)</span>
+
+<span class="s0">if </span><span class="s1">result </span><span class="s2">== </span><span class="s4">&quot;Not enough data&quot;</span><span class="s2">:</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Not enough data to calculate the average.&quot;</span><span class="s2">)</span>
+<span class="s0">else</span><span class="s2">:</span>
+    <span class="s1">average_price</span><span class="s2">, </span><span class="s1">above_average_days </span><span class="s2">= </span><span class="s1">result</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s4">f&quot;Average Stock Price: $</span><span class="s0">{</span><span class="s1">average_price</span><span class="s0">:</span><span class="s4">.2f</span><span class="s0">}</span><span class="s4">&quot;</span><span class="s2">)</span>
+    <span class="s1">print</span><span class="s2">(</span><span class="s4">&quot;Days with stock price above average:&quot;</span><span class="s2">, </span><span class="s1">above_average_days</span><span class="s2">)</span></pre>
+</body>
+</html>

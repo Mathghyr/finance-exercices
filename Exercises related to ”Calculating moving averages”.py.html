@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Exercises related to ”Calculating moving averages”.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Exercises related to ”Calculating moving averages”.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">yfinance </span><span class="s0">as </span><span class="s1">yf</span>
+<span class="s0">import </span><span class="s1">matplotlib</span><span class="s2">.</span><span class="s1">pyplot </span><span class="s0">as </span><span class="s1">plt</span>
+
+<span class="s1">adobe_data </span><span class="s2">= </span><span class="s1">yf</span><span class="s2">.</span><span class="s1">download</span><span class="s2">(</span><span class="s3">&quot;ADBE&quot;</span><span class="s2">, </span><span class="s1">start</span><span class="s2">=</span><span class="s3">&quot;2021-01-01&quot;</span><span class="s2">, </span><span class="s1">end</span><span class="s2">=</span><span class="s3">&quot;2021-12-31&quot;</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s1">adobe_data</span><span class="s2">.</span><span class="s1">head</span><span class="s2">())</span>
+<span class="s1">adobe_data</span><span class="s2">[</span><span class="s3">&quot;20-day MA&quot;</span><span class="s2">] = </span><span class="s1">adobe_data</span><span class="s2">[</span><span class="s3">'Close'</span><span class="s2">].</span><span class="s1">rolling</span><span class="s2">(</span><span class="s1">window</span><span class="s2">=</span><span class="s4">20</span><span class="s2">).</span><span class="s1">mean</span><span class="s2">()</span>
+<span class="s1">adobe_data</span><span class="s2">[[</span><span class="s3">'Close'</span><span class="s2">, </span><span class="s3">'20-day MA'</span><span class="s2">]].</span><span class="s1">plot</span><span class="s2">(</span><span class="s1">figsize</span><span class="s2">=(</span><span class="s4">10</span><span class="s2">, </span><span class="s4">5</span><span class="s2">))</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">title</span><span class="s2">(</span><span class="s3">&quot;Moving average of Adobe&quot;</span><span class="s2">)</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">ylabel</span><span class="s2">(</span><span class="s3">'Price'</span><span class="s2">)</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">xlabel</span><span class="s2">(</span><span class="s3">'Date'</span><span class="s2">)</span>
+<span class="s1">plt</span><span class="s2">.</span><span class="s1">show</span><span class="s2">()</span>
+</pre>
+</body>
+</html>
